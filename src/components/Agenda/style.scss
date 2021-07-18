@@ -8,6 +8,7 @@
   right: 0;
   background: $lightGrayColor;
   padding: 8px;
+  overflow: auto;
 }
 
 .container {
@@ -31,4 +32,14 @@
 .header {
   @include title-text;
   color: $blackColor;
+}
+
+.menu {
+  margin: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter {
+  width: 100px;
 }
