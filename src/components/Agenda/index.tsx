@@ -1,4 +1,4 @@
-import React, { ReactElement, useContext, useMemo } from 'react'
+import React, { ReactElement, useContext, useMemo, useState } from 'react'
 import { DateTime } from 'luxon'
 
 import greeting from 'lib/greeting'
@@ -29,14 +29,16 @@ const compareByDateTime = (a: AgendaItem, b: AgendaItem) =>
 const Agenda = (): ReactElement => {
   const account = useContext(AccountContext)
 
+  const [selectedCalendarColor, setSelectedCalendarColor] = useState('all');
   const events: AgendaItem[] = useMemo(
     () =>
       account.calendars
+        .filter((calendar) => selectedCalendarColor === 'all' ? true : calendar.color === selectedCalendarColor)
         .flatMap((calendar) =>
           calendar.events.map((event) => ({ calendar, event })),
         )
         .sort(compareByDateTime),
-    [account],
+    [account, selectedCalendarColor],
   )
 
   const title = useMemo(() => greeting(DateTime.local().hour), [DateTime.local().hour])
@@ -47,6 +49,14 @@ const Agenda = (): ReactElement => {
         <div className={style.header}>
           <span className={style.title}>{title}</span>
         </div>
+
+        {/* Filter by Calendar (assuming color is the id) (level 3) */}
+        <select onChange={(e) => setSelectedCalendarColor(e.target.value)}>
+          <option key="all" value="all">All Calendar</option>
+          {account.calendars.flatMap((calendar) => {
+            return (<option key={calendar.color} value={calendar.color}>{calendar.color}</option>)
+          })}
+        </select>
 
         <List>
           {events.map(({ calendar, event }) => (
