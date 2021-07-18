@@ -40,6 +40,23 @@
   justify-content: space-between;
 }
 
+.menu button {
+  @include basic-text;
+  background-color: $darkGrayColor;
+  border: none;
+  border-radius: 18px;
+  padding: 8px;
+}
+
+.menu button:hover {
+  cursor: pointer;
+}
+
 .filter {
-  width: 100px;
+  @include basic-text;
+  background-color: $lightGrayColor;
+}
+
+.filter:hover {
+  cursor: pointer;
 }
