@@ -10,7 +10,11 @@ const initialAccountValue = createAccount()
 const useAccount = (): [Account, () => Promise<void>] => {
   const [account, setAccount] = useState<Account>(initialAccountValue)
   const refreshAccount = async () =>
-    setAccount(await getUpdatedAccount(account))
+  await getUpdatedAccount(account)
+    .then((account: Account) => {
+      setAccount(account);
+    })
+    .catch(err => console.error('refresh failed because of some error'))
 
   return [account, refreshAccount]
 }

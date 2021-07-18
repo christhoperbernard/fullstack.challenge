@@ -8,6 +8,7 @@
   right: 0;
   background: $lightGrayColor;
   padding: 8px;
+  overflow: auto;
 }
 
 .container {
@@ -31,4 +32,31 @@
 .header {
   @include title-text;
   color: $blackColor;
+}
+
+.menu {
+  margin: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu button {
+  @include basic-text;
+  background-color: $darkGrayColor;
+  border: none;
+  border-radius: 18px;
+  padding: 8px;
+}
+
+.menu button:hover {
+  cursor: pointer;
+}
+
+.filter {
+  @include basic-text;
+  background-color: $lightGrayColor;
+}
+
+.filter:hover {
+  cursor: pointer;
 }

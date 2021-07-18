@@ -69,6 +69,19 @@ The requirements for this feature are:
 Please add your answers to the questions below:
 
 1. How long did you spend on this challenge?
+
+   ~2.5 hours finishing the coding challenge, 1 hours to test the solution.
+
 2. In your opinion, what are features that Double could work on that would be helpful for assistants when managing agendas?
+
+   - ability to prioritize the agenda
+   - ability to go to the agenda detail and make an edit to the agenda
+   - ability to send specific email reminders to the related people that will be on the specific agenda in case there is some specific requests
+
 3. If you had more time, what would you add or change in the codebase?
+
+   There are definitely some improvements that can be done with my solution. I would probably create a custom dropdown component for the filter and also a custom button component to toggle the view with a better styling.
+
 4. Do you have any constructive feedback that you would like to share with our team?
+
+   Overall, I think the take home coding challenge is great! There is literally no pressure as I was working on this challenge. I would say to keep this up. You guys are doing a great job in the coding challenge problem.
