@@ -80,7 +80,7 @@ Please add your answers to the questions below:
 
 3. If you had more time, what would you add or change in the codebase?
 
-   There are definitely some improvements that can be done with my solution. I would probably create a custom dropdown component for the filter and also a custom button component to toggle the view. Also, selecting a calendar ID is not ideal, so I would probably show a calendar name or anything that is being used for the assistants to filter the agenda.
+   There are definitely some improvements that can be done with my solution. I would probably create a custom dropdown component for the filter and also a custom button component to toggle the view with a better styling.
 
 4. Do you have any constructive feedback that you would like to share with our team?
 

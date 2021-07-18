@@ -35,7 +35,7 @@ const Agenda = (): ReactElement => {
   const events: AgendaItem[] = useMemo(
     () =>
       account.calendars
-        .filter((calendar) => selectedCalendarColor === 'all' ? true : calendar.id === selectedCalendarColor)
+        .filter((calendar) => selectedCalendarColor === 'all' ? true : calendar.color === selectedCalendarColor)
         .flatMap((calendar) =>
           calendar.events.map((event) => ({ calendar, event })),
         )
@@ -57,7 +57,7 @@ const Agenda = (): ReactElement => {
           <select className={style.filter} onChange={(e) => setSelectedCalendarColor(e.target.value)}>
             <option key="all" value="all">All Calendar</option>
             {account.calendars.flatMap((calendar) => {
-              return (<option key={calendar.id} value={calendar.id}>{calendar.id}</option>)
+              return (<option key={calendar.color} value={calendar.color}>{calendar.color}</option>)
             })}
           </select>
           {/* Toggle View By Department or All Departments (level 4) */}
